@@ -19,7 +19,7 @@ namespace Restaurant.Data.Repositories.Classes
         }
         public async Task AddAsync(TEntity entity)
         {
-            await _table.AddAsync(entity);
+            _table.Add(entity);
             await _databaseContext.SaveChangesAsync();
         }
 
