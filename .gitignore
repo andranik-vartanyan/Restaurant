@@ -1,0 +1,8 @@
+.vs/
+obj/
+bin/
+.git/
+
+*.dll
+*.cache
+*.pdb
