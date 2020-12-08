@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Restaurant.Data.Domain.Entities;
 using Restaurant.Data.Repositories.Interfaces;
+using Restaurant.Infrastructure.Services.Extensions;
 using Restaurant.Infrastructure.Services.Interfaces;
 using Restaurant.Shared.Dto;
 using System;
@@ -33,7 +34,7 @@ namespace Restaurant.Infrastructure.Services.Classes
                 return 0;
 
             Task task = _cityGenericRepository.AddAsync(_mapper.Map<CityDto, City>(cityDto));
-            await task;
+            await task.Logger();
             if (task.IsFaulted)
                 return -1;
 
